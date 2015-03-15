@@ -4,13 +4,9 @@ from object_repository import ObjectRepository
 from robot.api import logger
 from robot.libraries.BuiltIn import BuiltIn
 from selenium import webdriver
-#import prec_windowmanager
-#from prec_windowmanager import _BrowserManagementKeywords
 from Selenium2Library import Selenium2Library
 from prec_windowmanager import PrecedaWindowManager
 from prec_browsermgr import PrecedaBrowserMgr
-#from prec_windowmanager import WindowManager
-#from selenium.webdriver.remote.webdriver import WebDriver
 
 
 class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
@@ -76,4 +72,3 @@ class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
         self.wait_until_page_contains("Administration",300) 
         self.click_element("OR:menu_administration")
         self.capture_page_screenshot
-        #self.click_element(self.OR["login_button"])
