@@ -11,6 +11,7 @@ class ObjectRepository(object):
             "login_password" : "//*[@id='AUSRPWD']",
             "login_client" : 'css=#ACLIENT',
             "login_button" : "css=#loginButton",
+            "menu_administration" : "//*[@id='M000140']",
             #"login_banner" : "id=logOnBanner",
             #"login_info" : "css=.infoMessage",
             #"mainpage_banner" : "id=logoButton",

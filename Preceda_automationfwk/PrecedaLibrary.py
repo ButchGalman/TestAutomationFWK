@@ -69,9 +69,11 @@ class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
         self.input_text("OR:login_password", pwd)
         self.input_text("OR:login_client", client)
         self.click_element("OR:login_button")
-        self.wait_for_manual_step(30)
+        # wait until new window is launched not necessarily loaded
+        self.wait_for_manual_step(10)
         #Switch Browsers
         self.preceda_switch_to_New_Window()
-        self.click_element("//*[@id='M000140']") 
+        self.wait_until_page_contains("Administration",300) 
+        self.click_element("OR:menu_administration")
         self.capture_page_screenshot
         #self.click_element(self.OR["login_button"])
