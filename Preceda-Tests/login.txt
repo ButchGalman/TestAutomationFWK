@@ -1,0 +1,13 @@
+*** Settings ***
+Resource	../Preceda-Resources/resource.txt
+
+**Variables**
+${Username}	butch
+${Password}	preceda123
+${Client}	dc1253
+
+**TestCases**
+Test1
+	Preceda Logon	${Browser}	${URL}	${Username}	${Password}	${Client}
+	Capture Page Screenshot
+	Close Browser

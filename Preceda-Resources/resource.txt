@@ -1,0 +1,17 @@
+**Settings**
+Library	PrecedaLibrary	5
+
+**Variables**
+${Browser}	FF
+${URL}	https://qa.preceda.com.au/logon?device=Desktop
+
+** Keywords **
+Login to Preceda
+	[Arguments]	${URL}	${Browser}	${Username}	${Password}	${Client}
+	#Open Browser	${URL}	${Browser}
+	#Input Text	OR:login_username	${Username}
+	#Input Text	OR:login_password	${Password}
+	#Input Text	OR:login_client	${Client}
+	Capture Page Screenshot
+	#Click button	OR:login_button
+	#Select Window	title=Preceda
