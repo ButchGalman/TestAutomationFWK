@@ -3,7 +3,7 @@ Resource	../Preceda-Resources/resource.txt
 
 **Variables**
 ${Username}	butch
-${Password}	preceda123
+${Password}	${Hidden}
 ${Client}	dc1253
 
 **TestCases**

@@ -3,7 +3,7 @@ Library	PrecedaLibrary	5
 
 **Variables**
 ${Browser}	FF
-${URL}	https://qa.preceda.com.au/logon?device=Desktop
+${URL}	${Hidden}
 
 ** Keywords **
 Login to Preceda
