@@ -9,12 +9,10 @@ ${Password}	preceda123
 Login & Check Administration action
 	[TAGS]	Preceda_POC_func1
 	Preceda Logon	${Browser}	${URL}	${Username}	${Password}	${Client}
-	Click Element	OR:menu_administration
-	
-	# Check if option is available to user
-	#prec navigate & click tree item	Administration	Actions	Hire
-	#prec navigate & click tree item	Administration	Actions	Leave by Proxy
-	#prec navigate & click tree item	Administration	Actions	Reactivate
-	#prec navigate & click tree item	Administration	Actions	Initiate Termination
+	prec navigate click tree item	Administration	Actions	Hire
+	#Slow Down execution
+	# To be replaced with explicit waits
+	wait for manual step	5
+	prec navigate click tree item	Time	Rostering	Roster Codes
 	Capture Page Screenshot
 	Close Browser

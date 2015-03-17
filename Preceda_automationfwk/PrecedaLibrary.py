@@ -5,11 +5,13 @@ from robot.api import logger
 from robot.libraries.BuiltIn import BuiltIn
 from selenium import webdriver
 from Selenium2Library import Selenium2Library
+
+# Preceda Specific
 from prec_windowmanager import PrecedaWindowManager
 from prec_browsermgr import PrecedaBrowserMgr
+from prec_keywords import PrecedaKeywords
 
-
-class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
+class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr, PrecedaKeywords):
     '''This is the main class for a library for RobotFramework that uses Selenium 2.0 WebDriver
     in the back-end.  It exposes the PrecedaLibrary to robot framework
     '''
@@ -48,10 +50,7 @@ class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
         elif OR_name:
             return OR_name
         return self.OR[name]
-    
-    def wait_for_manual_step(self,timeout=0.0):
-        time.sleep(timeout)
-              
+                  
     def preceda_Logon(self, browser, url, user_name, pwd, client):
         '''perfoms Login functionality, by opening browser, navigating to URL, and trying to login
         it should catch the new window launched by Preceda
@@ -64,9 +63,7 @@ class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
         self.input_text("OR:login_client", client)
         self.click_element("OR:login_button")
         # wait until new window is launched not necessarily loaded
-        self.wait_for_manual_step(10)
+        self.wait_for_manual_step(30)
         #Switch Browsers
         self.preceda_switch_to_New_Window()
-        self.wait_until_page_contains("Administration",300) 
-        #self.click_element("OR:menu_administration")
-        self.capture_page_screenshot
+        #self.wait_until_page_contains_element("//*[@id='clientLogo']",100)
