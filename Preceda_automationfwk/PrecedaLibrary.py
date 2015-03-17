@@ -33,10 +33,9 @@ class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
         # if OR is located in objectRepo then use that value else use
         # input locator value
         ORlocator = self.get_locator_from_OR(locator)
-        sloc = ORlocator if ORlocator else locator
-        elements = self._element_finder.find(browser, sloc, tag)
+        elements = self._element_finder.find(browser, ORlocator, tag)
         if required and len(elements) == 0:
-            raise ValueError("Element locator '" + sloc + "' did not match any elements.")
+            raise ValueError("Element locator '" + ORlocator + "' did not match any elements.")
         if first_only:
             if len(elements) == 0: return None
             return elements[0]
@@ -48,7 +47,6 @@ class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
             name = OR_name[3:].lower()
         elif OR_name:
             return OR_name
-            #name = OR_name.lower()
         return self.OR[name]
     
     def wait_for_manual_step(self,timeout=0.0):
@@ -70,5 +68,5 @@ class PrecedaLibrary(Selenium2Library, PrecedaBrowserMgr):
         #Switch Browsers
         self.preceda_switch_to_New_Window()
         self.wait_until_page_contains("Administration",300) 
-        self.click_element("OR:menu_administration")
+        #self.click_element("OR:menu_administration")
         self.capture_page_screenshot

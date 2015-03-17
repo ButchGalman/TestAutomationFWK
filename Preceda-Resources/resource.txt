@@ -3,7 +3,7 @@ Library	PrecedaLibrary	5
 
 **Variables**
 ${Browser}	FF
-${URL}	${Hidden}
+${URL}	${None}
 
 ** Keywords **
 Login to Preceda
