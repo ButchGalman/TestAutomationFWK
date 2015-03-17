@@ -4,6 +4,7 @@ Library	PrecedaLibrary	5
 **Variables**
 ${Browser}	FF
 ${URL}	${None}
+${Client}	${None}
 
 ** Keywords **
 Login to Preceda
